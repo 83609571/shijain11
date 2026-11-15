@@ -250,7 +250,7 @@ window.onerror = function (msg, src, line) {
 </script>
 
 <div id="topbar">
-  <div class="brand">赣鄱智轨 <small>江西省通勤-旅游复合轨道</small></div>
+  <div class="brand">赣鄱智轨 <small>5G-A + AI 枢纽拥堵治理决策验证平台 · 决赛版 v3.0</small></div>
   <div id="module-nav">
     <button data-mod="network" class="active">线网一张图</button>
     <button data-mod="heat">客流热力</button>
@@ -258,10 +258,6 @@ window.onerror = function (msg, src, line) {
     <button data-mod="transfer">换乘仿真</button>
     <button data-mod="emergency">应急演示</button>
     <button data-mod="optimize" class="opt-mod">优化出行方式</button>
-    <a href="emergency.html" target="_blank" title="智能体应急联动与仿真一体化处置（四智能体协同 · 全链路闭环）"
-       style="align-self:center;background:linear-gradient(180deg,rgba(120,30,30,.85),rgba(70,15,15,.85));border:1px solid #f87171;color:#ffc9c9;padding:6px 12px;border-radius:4px;font-size:12px;font-family:inherit;text-decoration:none;white-space:nowrap;">应急一体化</a>
-    <a href="experiments.html" target="_blank" title="仿真实验可视化（消融 + 参数矩阵扫描）"
-       style="align-self:center;background:linear-gradient(180deg,rgba(20,80,120,.85),rgba(10,50,80,.85));border:1px solid #38bdf8;color:#8fd8ff;padding:6px 12px;border-radius:4px;font-size:12px;font-family:inherit;text-decoration:none;white-space:nowrap;">仿真实验</a>
   </div>
 </div>
 
@@ -341,7 +337,7 @@ window.onerror = function (msg, src, line) {
 
 <script>
 /* =====================================================================
- * 赣鄱智轨 · 校赛演示版（ECharts-GL，零AK，自包含）
+ * 赣鄱智轨 · 决赛版 v3.0（ECharts-GL，零AK，自包含）
  * 数据与逻辑镜像 sim/passenger_flow_sim.py / sim/dispatch_agent.py 输出
  * ===================================================================== */
 'use strict';
@@ -1218,7 +1214,7 @@ initOptimizePanel();
     setTimeout(poll, 100);
   })();
 })();
-console.log('[赣鄱智轨] 校赛演示版就绪：零AK，ECharts-GL 渲染');
+console.log('[赣鄱智轨] 决赛版 v3.0 就绪：零AK，ECharts-GL 渲染');
 
 // ---------- 挂载 L3 智能体决策面板 ----------
 // 决策面板与地图渲染彼此独立：ECharts 加载失败时地图打不开，
@@ -1238,8 +1234,34 @@ console.log('[赣鄱智轨] 校赛演示版就绪：零AK，ECharts-GL 渲染');
   });
 })();
 </script>
+
+<footer style="position:fixed;left:0;right:0;bottom:0;z-index:5;pointer-events:none;margin:0;padding:4px 16px;text-align:center;font:11px/1.6 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;color:#9fb3c8;background:rgba(7,17,32,.72);border-top:1px solid rgba(148,163,184,.22);">
+赣鄱智轨 v3.0 决赛版 · 2026-11-08 · 数据来源：本项目仿真引擎（真实锚点 19 + 5 条），仿真推演值均已标注
+</footer>
+<div style="position:fixed;bottom:34px;right:14px;z-index:70;display:flex;flex-direction:column;gap:8px;align-items:flex-end;">
+  <button onclick="openModule('stage.html')" style="padding:8px 14px;font:600 13px/1 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;color:#d8e6ff;background:#0f2036;border:1px solid #1a3a5c;border-radius:20px;cursor:pointer;">沙盘演示台</button>
+  <button onclick="openModule('experiments.html')" style="padding:8px 14px;font:600 13px/1 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;color:#8fd8ff;background:#0f2036;border:1px solid #38bdf8;border-radius:20px;cursor:pointer;">仿真实验</button>
+  <button onclick="openModule('emergency.html')" style="padding:8px 14px;font:600 13px/1 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;color:#ffc9c9;background:#0f2036;border:1px solid #f87171;border-radius:20px;cursor:pointer;">应急演示</button>
+  <button onclick="openModule('bmap.html')" style="padding:8px 14px;font:600 13px/1 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;color:#d8e6ff;background:#0f2036;border:1px solid #1a3a5c;border-radius:20px;cursor:pointer;">百度地图版</button>
+</div>
+<div id="module-frame-wrap" style="display:none;position:fixed;inset:0;z-index:65;background:#0a1628;">
+  <div style="position:fixed;bottom:14px;right:14px;z-index:5;">
+    <button onclick="closeModule()" style="padding:8px 14px;font:600 13px/1 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;color:#d8e6ff;background:#0f2036;border:1px solid #1a3a5c;border-radius:20px;cursor:pointer;">← 返回一张图</button>
+  </div>
+  <iframe id="module-frame" src="about:blank" style="width:100%;height:100%;border:0;"></iframe>
+</div>
 <script>
-// 应急状态自动感应（3 秒轮询后端）：事件注入/SLA 联动触发时本页自动亮灭风险覆盖物
+function openModule(src) {
+  document.getElementById('module-frame').src = src;
+  document.getElementById('module-frame-wrap').style.display = 'block';
+}
+function closeModule() {
+  document.getElementById('module-frame-wrap').style.display = 'none';
+  document.getElementById('module-frame').src = 'about:blank';
+}
+</script>
+<script>
+// 应急状态自动联动（3 秒轮询后端）：SLA 切换台切到暴雨边坡、事件注入时一张图自动亮起，解除自动熄灭
 (function () {
   var last = null;
   setInterval(function () {
