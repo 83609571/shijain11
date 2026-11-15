@@ -695,16 +695,6 @@ class Handler(BaseHTTPRequestHandler):
     server_version = "GanpoFinalsAPI/3.0"
     protocol_version = "HTTP/1.1"
 
-    def do_OPTIONS(self) -> None:
-        """跨域预检：github.io 线上页面调用云端 API 时浏览器会先发 OPTIONS。"""
-        self.send_response(204)
-        self.send_header("Access-Control-Allow-Origin", "*")
-        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-        self.send_header("Access-Control-Allow-Headers", "Content-Type")
-        self.send_header("Access-Control-Max-Age", "86400")
-        self.send_header("Content-Length", "0")
-        self.end_headers()
-
     # -- 基础发送 --
     def _send(self, code: int, payload: dict) -> None:
         body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
