@@ -1,0 +1,2655 @@
+{
+ "generated_at": "2026-11-08T18:08:20",
+ "spec_version": 3,
+ "note": "扩池对照：与盲搜同格点穷举（headway [8, 9, 10, 12, 15] × limit [0, 1, 2] × 组需求，fleet 按口径），三对象对比（系统四范式最优 / 扩池最优 / 盲搜最优），评分同一 score_plan。",
+ "groups": [
+  {
+   "group_id": 1,
+   "scenario": "holiday",
+   "hub": "南昌站",
+   "demand_mult": 1.0,
+   "tracks": {
+    "nocapex": {
+     "fleet_limit": 480,
+     "system": {
+      "id": "A",
+      "score": 72.5,
+      "dims": {
+       "congestion": 50.6,
+       "service": 99.6,
+       "cost": 81.7,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "holiday",
+       "headway_min": 10,
+       "formation_cars": 8,
+       "limit_level": 2,
+       "demand_mult": 1.0,
+       "fleet_limit": 480,
+       "baseline_flag": false
+      },
+      "score": 80.2,
+      "dims": {
+       "congestion": 82.9,
+       "service": 82.3,
+       "cost": 81.7,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 80.2,
+      "dims": {
+       "congestion": 82.9,
+       "service": 82.3,
+       "cost": 81.7,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 7.7
+     }
+    },
+    "capex": {
+     "fleet_limit": 600,
+     "system": {
+      "id": "D",
+      "score": 81.6,
+      "dims": {
+       "congestion": 87.1,
+       "service": 100.0,
+       "cost": 54.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "holiday",
+       "headway_min": 9,
+       "formation_cars": 8,
+       "limit_level": 2,
+       "demand_mult": 1.0,
+       "fleet_limit": 600,
+       "baseline_flag": false
+      },
+      "score": 82.3,
+      "dims": {
+       "congestion": 94.0,
+       "service": 82.7,
+       "cost": 69.4,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 82.3,
+      "dims": {
+       "congestion": 94.0,
+       "service": 82.7,
+       "cost": 69.4,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.7
+     }
+    }
+   }
+  },
+  {
+   "group_id": 2,
+   "scenario": "holiday",
+   "hub": "南昌站",
+   "demand_mult": 1.2,
+   "tracks": {
+    "nocapex": {
+     "fleet_limit": 480,
+     "system": {
+      "id": "A",
+      "score": 54.2,
+      "dims": {
+       "congestion": 17.3,
+       "service": 83.1,
+       "cost": 82.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "holiday",
+       "headway_min": 10,
+       "formation_cars": 8,
+       "limit_level": 2,
+       "demand_mult": 1.2,
+       "fleet_limit": 480,
+       "baseline_flag": false
+      },
+      "score": 58.3,
+      "dims": {
+       "congestion": 58.6,
+       "service": 41.5,
+       "cost": 82.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 58.3,
+      "dims": {
+       "congestion": 58.6,
+       "service": 41.5,
+       "cost": 82.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 4.1
+     }
+    },
+    "capex": {
+     "fleet_limit": 600,
+     "system": {
+      "id": "D",
+      "score": 74.4,
+      "dims": {
+       "congestion": 74.0,
+       "service": 93.1,
+       "cost": 54.6,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "holiday",
+       "headway_min": 8,
+       "formation_cars": 8,
+       "limit_level": 2,
+       "demand_mult": 1.2,
+       "fleet_limit": 600,
+       "baseline_flag": false
+      },
+      "score": 76.7,
+      "dims": {
+       "congestion": 87.3,
+       "service": 82.7,
+       "cost": 54.6,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 76.7,
+      "dims": {
+       "congestion": 87.3,
+       "service": 82.7,
+       "cost": 54.6,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 2.3
+     }
+    }
+   }
+  },
+  {
+   "group_id": 3,
+   "scenario": "holiday",
+   "hub": "九江站",
+   "demand_mult": 1.0,
+   "tracks": {
+    "nocapex": {
+     "fleet_limit": 480,
+     "system": {
+      "id": "A",
+      "score": 72.5,
+      "dims": {
+       "congestion": 50.6,
+       "service": 99.6,
+       "cost": 81.7,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "holiday",
+       "headway_min": 10,
+       "formation_cars": 8,
+       "limit_level": 2,
+       "demand_mult": 1.0,
+       "fleet_limit": 480,
+       "baseline_flag": false
+      },
+      "score": 80.2,
+      "dims": {
+       "congestion": 82.9,
+       "service": 82.3,
+       "cost": 81.7,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 80.2,
+      "dims": {
+       "congestion": 82.9,
+       "service": 82.3,
+       "cost": 81.7,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 7.7
+     }
+    },
+    "capex": {
+     "fleet_limit": 600,
+     "system": {
+      "id": "D",
+      "score": 81.6,
+      "dims": {
+       "congestion": 87.1,
+       "service": 100.0,
+       "cost": 54.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "holiday",
+       "headway_min": 9,
+       "formation_cars": 8,
+       "limit_level": 2,
+       "demand_mult": 1.0,
+       "fleet_limit": 600,
+       "baseline_flag": false
+      },
+      "score": 82.3,
+      "dims": {
+       "congestion": 94.0,
+       "service": 82.7,
+       "cost": 69.4,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 82.3,
+      "dims": {
+       "congestion": 94.0,
+       "service": 82.7,
+       "cost": 69.4,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.7
+     }
+    }
+   }
+  },
+  {
+   "group_id": 4,
+   "scenario": "holiday",
+   "hub": "九江站",
+   "demand_mult": 1.2,
+   "tracks": {
+    "nocapex": {
+     "fleet_limit": 480,
+     "system": {
+      "id": "A",
+      "score": 54.2,
+      "dims": {
+       "congestion": 17.3,
+       "service": 83.1,
+       "cost": 82.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "holiday",
+       "headway_min": 10,
+       "formation_cars": 8,
+       "limit_level": 2,
+       "demand_mult": 1.2,
+       "fleet_limit": 480,
+       "baseline_flag": false
+      },
+      "score": 58.3,
+      "dims": {
+       "congestion": 58.6,
+       "service": 41.5,
+       "cost": 82.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 58.3,
+      "dims": {
+       "congestion": 58.6,
+       "service": 41.5,
+       "cost": 82.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 4.1
+     }
+    },
+    "capex": {
+     "fleet_limit": 600,
+     "system": {
+      "id": "D",
+      "score": 74.4,
+      "dims": {
+       "congestion": 74.0,
+       "service": 93.1,
+       "cost": 54.6,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "holiday",
+       "headway_min": 8,
+       "formation_cars": 8,
+       "limit_level": 2,
+       "demand_mult": 1.2,
+       "fleet_limit": 600,
+       "baseline_flag": false
+      },
+      "score": 76.7,
+      "dims": {
+       "congestion": 87.3,
+       "service": 82.7,
+       "cost": 54.6,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 76.7,
+      "dims": {
+       "congestion": 87.3,
+       "service": 82.7,
+       "cost": 54.6,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 2.3
+     }
+    }
+   }
+  },
+  {
+   "group_id": 5,
+   "scenario": "holiday",
+   "hub": "上饶站",
+   "demand_mult": 1.0,
+   "tracks": {
+    "nocapex": {
+     "fleet_limit": 480,
+     "system": {
+      "id": "A",
+      "score": 72.5,
+      "dims": {
+       "congestion": 50.6,
+       "service": 99.6,
+       "cost": 81.7,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "holiday",
+       "headway_min": 10,
+       "formation_cars": 8,
+       "limit_level": 2,
+       "demand_mult": 1.0,
+       "fleet_limit": 480,
+       "baseline_flag": false
+      },
+      "score": 80.2,
+      "dims": {
+       "congestion": 82.9,
+       "service": 82.3,
+       "cost": 81.7,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 80.2,
+      "dims": {
+       "congestion": 82.9,
+       "service": 82.3,
+       "cost": 81.7,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 7.7
+     }
+    },
+    "capex": {
+     "fleet_limit": 600,
+     "system": {
+      "id": "D",
+      "score": 81.6,
+      "dims": {
+       "congestion": 87.1,
+       "service": 100.0,
+       "cost": 54.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "holiday",
+       "headway_min": 9,
+       "formation_cars": 8,
+       "limit_level": 2,
+       "demand_mult": 1.0,
+       "fleet_limit": 600,
+       "baseline_flag": false
+      },
+      "score": 82.3,
+      "dims": {
+       "congestion": 94.0,
+       "service": 82.7,
+       "cost": 69.4,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 82.3,
+      "dims": {
+       "congestion": 94.0,
+       "service": 82.7,
+       "cost": 69.4,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.7
+     }
+    }
+   }
+  },
+  {
+   "group_id": 6,
+   "scenario": "holiday",
+   "hub": "上饶站",
+   "demand_mult": 1.2,
+   "tracks": {
+    "nocapex": {
+     "fleet_limit": 480,
+     "system": {
+      "id": "A",
+      "score": 54.2,
+      "dims": {
+       "congestion": 17.3,
+       "service": 83.1,
+       "cost": 82.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "holiday",
+       "headway_min": 10,
+       "formation_cars": 8,
+       "limit_level": 2,
+       "demand_mult": 1.2,
+       "fleet_limit": 480,
+       "baseline_flag": false
+      },
+      "score": 58.3,
+      "dims": {
+       "congestion": 58.6,
+       "service": 41.5,
+       "cost": 82.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 58.3,
+      "dims": {
+       "congestion": 58.6,
+       "service": 41.5,
+       "cost": 82.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 4.1
+     }
+    },
+    "capex": {
+     "fleet_limit": 600,
+     "system": {
+      "id": "D",
+      "score": 74.4,
+      "dims": {
+       "congestion": 74.0,
+       "service": 93.1,
+       "cost": 54.6,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "holiday",
+       "headway_min": 8,
+       "formation_cars": 8,
+       "limit_level": 2,
+       "demand_mult": 1.2,
+       "fleet_limit": 600,
+       "baseline_flag": false
+      },
+      "score": 76.7,
+      "dims": {
+       "congestion": 87.3,
+       "service": 82.7,
+       "cost": 54.6,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 76.7,
+      "dims": {
+       "congestion": 87.3,
+       "service": 82.7,
+       "cost": 54.6,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 2.3
+     }
+    }
+   }
+  },
+  {
+   "group_id": 7,
+   "scenario": "holiday",
+   "hub": "庐山站",
+   "demand_mult": 1.0,
+   "tracks": {
+    "nocapex": {
+     "fleet_limit": 480,
+     "system": {
+      "id": "A",
+      "score": 72.5,
+      "dims": {
+       "congestion": 50.6,
+       "service": 99.6,
+       "cost": 81.7,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "holiday",
+       "headway_min": 10,
+       "formation_cars": 8,
+       "limit_level": 2,
+       "demand_mult": 1.0,
+       "fleet_limit": 480,
+       "baseline_flag": false
+      },
+      "score": 80.2,
+      "dims": {
+       "congestion": 82.9,
+       "service": 82.3,
+       "cost": 81.7,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 80.2,
+      "dims": {
+       "congestion": 82.9,
+       "service": 82.3,
+       "cost": 81.7,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 7.7
+     }
+    },
+    "capex": {
+     "fleet_limit": 600,
+     "system": {
+      "id": "D",
+      "score": 81.6,
+      "dims": {
+       "congestion": 87.1,
+       "service": 100.0,
+       "cost": 54.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "holiday",
+       "headway_min": 9,
+       "formation_cars": 8,
+       "limit_level": 2,
+       "demand_mult": 1.0,
+       "fleet_limit": 600,
+       "baseline_flag": false
+      },
+      "score": 82.3,
+      "dims": {
+       "congestion": 94.0,
+       "service": 82.7,
+       "cost": 69.4,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 82.3,
+      "dims": {
+       "congestion": 94.0,
+       "service": 82.7,
+       "cost": 69.4,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.7
+     }
+    }
+   }
+  },
+  {
+   "group_id": 8,
+   "scenario": "holiday",
+   "hub": "庐山站",
+   "demand_mult": 1.2,
+   "tracks": {
+    "nocapex": {
+     "fleet_limit": 480,
+     "system": {
+      "id": "A",
+      "score": 54.2,
+      "dims": {
+       "congestion": 17.3,
+       "service": 83.1,
+       "cost": 82.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "holiday",
+       "headway_min": 10,
+       "formation_cars": 8,
+       "limit_level": 2,
+       "demand_mult": 1.2,
+       "fleet_limit": 480,
+       "baseline_flag": false
+      },
+      "score": 58.3,
+      "dims": {
+       "congestion": 58.6,
+       "service": 41.5,
+       "cost": 82.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 58.3,
+      "dims": {
+       "congestion": 58.6,
+       "service": 41.5,
+       "cost": 82.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 4.1
+     }
+    },
+    "capex": {
+     "fleet_limit": 600,
+     "system": {
+      "id": "D",
+      "score": 74.4,
+      "dims": {
+       "congestion": 74.0,
+       "service": 93.1,
+       "cost": 54.6,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "holiday",
+       "headway_min": 8,
+       "formation_cars": 8,
+       "limit_level": 2,
+       "demand_mult": 1.2,
+       "fleet_limit": 600,
+       "baseline_flag": false
+      },
+      "score": 76.7,
+      "dims": {
+       "congestion": 87.3,
+       "service": 82.7,
+       "cost": 54.6,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 76.7,
+      "dims": {
+       "congestion": 87.3,
+       "service": 82.7,
+       "cost": 54.6,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 2.3
+     }
+    }
+   }
+  },
+  {
+   "group_id": 9,
+   "scenario": "holiday",
+   "hub": "赣州站",
+   "demand_mult": 1.0,
+   "tracks": {
+    "nocapex": {
+     "fleet_limit": 480,
+     "system": {
+      "id": "A",
+      "score": 72.5,
+      "dims": {
+       "congestion": 50.6,
+       "service": 99.6,
+       "cost": 81.7,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "holiday",
+       "headway_min": 10,
+       "formation_cars": 8,
+       "limit_level": 2,
+       "demand_mult": 1.0,
+       "fleet_limit": 480,
+       "baseline_flag": false
+      },
+      "score": 80.2,
+      "dims": {
+       "congestion": 82.9,
+       "service": 82.3,
+       "cost": 81.7,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 80.2,
+      "dims": {
+       "congestion": 82.9,
+       "service": 82.3,
+       "cost": 81.7,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 7.7
+     }
+    },
+    "capex": {
+     "fleet_limit": 600,
+     "system": {
+      "id": "D",
+      "score": 81.6,
+      "dims": {
+       "congestion": 87.1,
+       "service": 100.0,
+       "cost": 54.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "holiday",
+       "headway_min": 9,
+       "formation_cars": 8,
+       "limit_level": 2,
+       "demand_mult": 1.0,
+       "fleet_limit": 600,
+       "baseline_flag": false
+      },
+      "score": 82.3,
+      "dims": {
+       "congestion": 94.0,
+       "service": 82.7,
+       "cost": 69.4,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 82.3,
+      "dims": {
+       "congestion": 94.0,
+       "service": 82.7,
+       "cost": 69.4,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.7
+     }
+    }
+   }
+  },
+  {
+   "group_id": 10,
+   "scenario": "holiday",
+   "hub": "赣州站",
+   "demand_mult": 1.2,
+   "tracks": {
+    "nocapex": {
+     "fleet_limit": 480,
+     "system": {
+      "id": "A",
+      "score": 54.2,
+      "dims": {
+       "congestion": 17.3,
+       "service": 83.1,
+       "cost": 82.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "holiday",
+       "headway_min": 10,
+       "formation_cars": 8,
+       "limit_level": 2,
+       "demand_mult": 1.2,
+       "fleet_limit": 480,
+       "baseline_flag": false
+      },
+      "score": 58.3,
+      "dims": {
+       "congestion": 58.6,
+       "service": 41.5,
+       "cost": 82.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 58.3,
+      "dims": {
+       "congestion": 58.6,
+       "service": 41.5,
+       "cost": 82.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 4.1
+     }
+    },
+    "capex": {
+     "fleet_limit": 600,
+     "system": {
+      "id": "D",
+      "score": 74.4,
+      "dims": {
+       "congestion": 74.0,
+       "service": 93.1,
+       "cost": 54.6,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "holiday",
+       "headway_min": 8,
+       "formation_cars": 8,
+       "limit_level": 2,
+       "demand_mult": 1.2,
+       "fleet_limit": 600,
+       "baseline_flag": false
+      },
+      "score": 76.7,
+      "dims": {
+       "congestion": 87.3,
+       "service": 82.7,
+       "cost": 54.6,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 76.7,
+      "dims": {
+       "congestion": 87.3,
+       "service": 82.7,
+       "cost": 54.6,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 2.3
+     }
+    }
+   }
+  },
+  {
+   "group_id": 11,
+   "scenario": "weekday",
+   "hub": "南昌站",
+   "demand_mult": 1.0,
+   "tracks": {
+    "nocapex": {
+     "fleet_limit": 480,
+     "system": {
+      "id": "B",
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "weekday",
+       "headway_min": 12,
+       "formation_cars": 8,
+       "limit_level": 0,
+       "demand_mult": 1.0,
+       "fleet_limit": 480,
+       "baseline_flag": false
+      },
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.0
+     }
+    },
+    "capex": {
+     "fleet_limit": 600,
+     "system": {
+      "id": "B",
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "weekday",
+       "headway_min": 12,
+       "formation_cars": 8,
+       "limit_level": 0,
+       "demand_mult": 1.0,
+       "fleet_limit": 600,
+       "baseline_flag": false
+      },
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.0
+     }
+    }
+   }
+  },
+  {
+   "group_id": 12,
+   "scenario": "weekday",
+   "hub": "南昌站",
+   "demand_mult": 1.2,
+   "tracks": {
+    "nocapex": {
+     "fleet_limit": 480,
+     "system": {
+      "id": "B",
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "weekday",
+       "headway_min": 12,
+       "formation_cars": 8,
+       "limit_level": 0,
+       "demand_mult": 1.2,
+       "fleet_limit": 480,
+       "baseline_flag": false
+      },
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.0
+     }
+    },
+    "capex": {
+     "fleet_limit": 600,
+     "system": {
+      "id": "B",
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "weekday",
+       "headway_min": 12,
+       "formation_cars": 8,
+       "limit_level": 0,
+       "demand_mult": 1.2,
+       "fleet_limit": 600,
+       "baseline_flag": false
+      },
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.0
+     }
+    }
+   }
+  },
+  {
+   "group_id": 13,
+   "scenario": "weekday",
+   "hub": "九江站",
+   "demand_mult": 1.0,
+   "tracks": {
+    "nocapex": {
+     "fleet_limit": 480,
+     "system": {
+      "id": "B",
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "weekday",
+       "headway_min": 12,
+       "formation_cars": 8,
+       "limit_level": 0,
+       "demand_mult": 1.0,
+       "fleet_limit": 480,
+       "baseline_flag": false
+      },
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.0
+     }
+    },
+    "capex": {
+     "fleet_limit": 600,
+     "system": {
+      "id": "B",
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "weekday",
+       "headway_min": 12,
+       "formation_cars": 8,
+       "limit_level": 0,
+       "demand_mult": 1.0,
+       "fleet_limit": 600,
+       "baseline_flag": false
+      },
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.0
+     }
+    }
+   }
+  },
+  {
+   "group_id": 14,
+   "scenario": "weekday",
+   "hub": "九江站",
+   "demand_mult": 1.2,
+   "tracks": {
+    "nocapex": {
+     "fleet_limit": 480,
+     "system": {
+      "id": "B",
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "weekday",
+       "headway_min": 12,
+       "formation_cars": 8,
+       "limit_level": 0,
+       "demand_mult": 1.2,
+       "fleet_limit": 480,
+       "baseline_flag": false
+      },
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.0
+     }
+    },
+    "capex": {
+     "fleet_limit": 600,
+     "system": {
+      "id": "B",
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "weekday",
+       "headway_min": 12,
+       "formation_cars": 8,
+       "limit_level": 0,
+       "demand_mult": 1.2,
+       "fleet_limit": 600,
+       "baseline_flag": false
+      },
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.0
+     }
+    }
+   }
+  },
+  {
+   "group_id": 15,
+   "scenario": "weekday",
+   "hub": "上饶站",
+   "demand_mult": 1.0,
+   "tracks": {
+    "nocapex": {
+     "fleet_limit": 480,
+     "system": {
+      "id": "B",
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "weekday",
+       "headway_min": 12,
+       "formation_cars": 8,
+       "limit_level": 0,
+       "demand_mult": 1.0,
+       "fleet_limit": 480,
+       "baseline_flag": false
+      },
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.0
+     }
+    },
+    "capex": {
+     "fleet_limit": 600,
+     "system": {
+      "id": "B",
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "weekday",
+       "headway_min": 12,
+       "formation_cars": 8,
+       "limit_level": 0,
+       "demand_mult": 1.0,
+       "fleet_limit": 600,
+       "baseline_flag": false
+      },
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.0
+     }
+    }
+   }
+  },
+  {
+   "group_id": 16,
+   "scenario": "weekday",
+   "hub": "上饶站",
+   "demand_mult": 1.2,
+   "tracks": {
+    "nocapex": {
+     "fleet_limit": 480,
+     "system": {
+      "id": "B",
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "weekday",
+       "headway_min": 12,
+       "formation_cars": 8,
+       "limit_level": 0,
+       "demand_mult": 1.2,
+       "fleet_limit": 480,
+       "baseline_flag": false
+      },
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.0
+     }
+    },
+    "capex": {
+     "fleet_limit": 600,
+     "system": {
+      "id": "B",
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "weekday",
+       "headway_min": 12,
+       "formation_cars": 8,
+       "limit_level": 0,
+       "demand_mult": 1.2,
+       "fleet_limit": 600,
+       "baseline_flag": false
+      },
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.0
+     }
+    }
+   }
+  },
+  {
+   "group_id": 17,
+   "scenario": "weekday",
+   "hub": "庐山站",
+   "demand_mult": 1.0,
+   "tracks": {
+    "nocapex": {
+     "fleet_limit": 480,
+     "system": {
+      "id": "B",
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "weekday",
+       "headway_min": 12,
+       "formation_cars": 8,
+       "limit_level": 0,
+       "demand_mult": 1.0,
+       "fleet_limit": 480,
+       "baseline_flag": false
+      },
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.0
+     }
+    },
+    "capex": {
+     "fleet_limit": 600,
+     "system": {
+      "id": "B",
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "weekday",
+       "headway_min": 12,
+       "formation_cars": 8,
+       "limit_level": 0,
+       "demand_mult": 1.0,
+       "fleet_limit": 600,
+       "baseline_flag": false
+      },
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.0
+     }
+    }
+   }
+  },
+  {
+   "group_id": 18,
+   "scenario": "weekday",
+   "hub": "庐山站",
+   "demand_mult": 1.2,
+   "tracks": {
+    "nocapex": {
+     "fleet_limit": 480,
+     "system": {
+      "id": "B",
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "weekday",
+       "headway_min": 12,
+       "formation_cars": 8,
+       "limit_level": 0,
+       "demand_mult": 1.2,
+       "fleet_limit": 480,
+       "baseline_flag": false
+      },
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.0
+     }
+    },
+    "capex": {
+     "fleet_limit": 600,
+     "system": {
+      "id": "B",
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "weekday",
+       "headway_min": 12,
+       "formation_cars": 8,
+       "limit_level": 0,
+       "demand_mult": 1.2,
+       "fleet_limit": 600,
+       "baseline_flag": false
+      },
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.0
+     }
+    }
+   }
+  },
+  {
+   "group_id": 19,
+   "scenario": "weekday",
+   "hub": "赣州站",
+   "demand_mult": 1.0,
+   "tracks": {
+    "nocapex": {
+     "fleet_limit": 480,
+     "system": {
+      "id": "B",
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "weekday",
+       "headway_min": 12,
+       "formation_cars": 8,
+       "limit_level": 0,
+       "demand_mult": 1.0,
+       "fleet_limit": 480,
+       "baseline_flag": false
+      },
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.0
+     }
+    },
+    "capex": {
+     "fleet_limit": 600,
+     "system": {
+      "id": "B",
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "weekday",
+       "headway_min": 12,
+       "formation_cars": 8,
+       "limit_level": 0,
+       "demand_mult": 1.0,
+       "fleet_limit": 600,
+       "baseline_flag": false
+      },
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.0
+     }
+    }
+   }
+  },
+  {
+   "group_id": 20,
+   "scenario": "weekday",
+   "hub": "赣州站",
+   "demand_mult": 1.2,
+   "tracks": {
+    "nocapex": {
+     "fleet_limit": 480,
+     "system": {
+      "id": "B",
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "weekday",
+       "headway_min": 12,
+       "formation_cars": 8,
+       "limit_level": 0,
+       "demand_mult": 1.2,
+       "fleet_limit": 480,
+       "baseline_flag": false
+      },
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.0
+     }
+    },
+    "capex": {
+     "fleet_limit": 600,
+     "system": {
+      "id": "B",
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_best": {
+      "config": {
+       "scenario": "weekday",
+       "headway_min": 12,
+       "formation_cars": 8,
+       "limit_level": 0,
+       "demand_mult": 1.2,
+       "fleet_limit": 600,
+       "baseline_flag": false
+      },
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "blind_best": {
+      "score": 96.0,
+      "dims": {
+       "congestion": 100.0,
+       "service": 100.0,
+       "cost": 100.0,
+       "robustness": 60.0
+      }
+     },
+     "expanded_vs_blind": {
+      "tie": true,
+      "gap": 0.0
+     },
+     "expanded_vs_system": {
+      "gap": 0.0
+     }
+    }
+   }
+  }
+ ],
+ "stats_nocapex": {
+  "tie_count": 20,
+  "blind_miss_count": 0,
+  "still_behind_count": 0,
+  "system_gap_avg": 2.95,
+  "dim_gaps_avg": {
+   "congestion": 18.4,
+   "service": -14.72,
+   "cost": 0.0,
+   "robustness": 0.0
+  },
+  "by_scenario": {
+   "holiday": {
+    "tie_count": 10,
+    "total": 10
+   },
+   "weekday": {
+    "tie_count": 10,
+    "total": 10
+   }
+  }
+ },
+ "rows_nocapex": [
+  {
+   "group_id": 1,
+   "scenario": "holiday",
+   "hub": "南昌站",
+   "demand_mult": 1.0,
+   "system_id": "A",
+   "system_score": 72.5,
+   "expanded_score": 80.2,
+   "expanded_headway": 10,
+   "expanded_limit": 2,
+   "blind_score": 80.2,
+   "tie": true,
+   "expanded_vs_system_gap": 7.7
+  },
+  {
+   "group_id": 2,
+   "scenario": "holiday",
+   "hub": "南昌站",
+   "demand_mult": 1.2,
+   "system_id": "A",
+   "system_score": 54.2,
+   "expanded_score": 58.3,
+   "expanded_headway": 10,
+   "expanded_limit": 2,
+   "blind_score": 58.3,
+   "tie": true,
+   "expanded_vs_system_gap": 4.1
+  },
+  {
+   "group_id": 3,
+   "scenario": "holiday",
+   "hub": "九江站",
+   "demand_mult": 1.0,
+   "system_id": "A",
+   "system_score": 72.5,
+   "expanded_score": 80.2,
+   "expanded_headway": 10,
+   "expanded_limit": 2,
+   "blind_score": 80.2,
+   "tie": true,
+   "expanded_vs_system_gap": 7.7
+  },
+  {
+   "group_id": 4,
+   "scenario": "holiday",
+   "hub": "九江站",
+   "demand_mult": 1.2,
+   "system_id": "A",
+   "system_score": 54.2,
+   "expanded_score": 58.3,
+   "expanded_headway": 10,
+   "expanded_limit": 2,
+   "blind_score": 58.3,
+   "tie": true,
+   "expanded_vs_system_gap": 4.1
+  },
+  {
+   "group_id": 5,
+   "scenario": "holiday",
+   "hub": "上饶站",
+   "demand_mult": 1.0,
+   "system_id": "A",
+   "system_score": 72.5,
+   "expanded_score": 80.2,
+   "expanded_headway": 10,
+   "expanded_limit": 2,
+   "blind_score": 80.2,
+   "tie": true,
+   "expanded_vs_system_gap": 7.7
+  },
+  {
+   "group_id": 6,
+   "scenario": "holiday",
+   "hub": "上饶站",
+   "demand_mult": 1.2,
+   "system_id": "A",
+   "system_score": 54.2,
+   "expanded_score": 58.3,
+   "expanded_headway": 10,
+   "expanded_limit": 2,
+   "blind_score": 58.3,
+   "tie": true,
+   "expanded_vs_system_gap": 4.1
+  },
+  {
+   "group_id": 7,
+   "scenario": "holiday",
+   "hub": "庐山站",
+   "demand_mult": 1.0,
+   "system_id": "A",
+   "system_score": 72.5,
+   "expanded_score": 80.2,
+   "expanded_headway": 10,
+   "expanded_limit": 2,
+   "blind_score": 80.2,
+   "tie": true,
+   "expanded_vs_system_gap": 7.7
+  },
+  {
+   "group_id": 8,
+   "scenario": "holiday",
+   "hub": "庐山站",
+   "demand_mult": 1.2,
+   "system_id": "A",
+   "system_score": 54.2,
+   "expanded_score": 58.3,
+   "expanded_headway": 10,
+   "expanded_limit": 2,
+   "blind_score": 58.3,
+   "tie": true,
+   "expanded_vs_system_gap": 4.1
+  },
+  {
+   "group_id": 9,
+   "scenario": "holiday",
+   "hub": "赣州站",
+   "demand_mult": 1.0,
+   "system_id": "A",
+   "system_score": 72.5,
+   "expanded_score": 80.2,
+   "expanded_headway": 10,
+   "expanded_limit": 2,
+   "blind_score": 80.2,
+   "tie": true,
+   "expanded_vs_system_gap": 7.7
+  },
+  {
+   "group_id": 10,
+   "scenario": "holiday",
+   "hub": "赣州站",
+   "demand_mult": 1.2,
+   "system_id": "A",
+   "system_score": 54.2,
+   "expanded_score": 58.3,
+   "expanded_headway": 10,
+   "expanded_limit": 2,
+   "blind_score": 58.3,
+   "tie": true,
+   "expanded_vs_system_gap": 4.1
+  },
+  {
+   "group_id": 11,
+   "scenario": "weekday",
+   "hub": "南昌站",
+   "demand_mult": 1.0,
+   "system_id": "B",
+   "system_score": 96.0,
+   "expanded_score": 96.0,
+   "expanded_headway": 12,
+   "expanded_limit": 0,
+   "blind_score": 96.0,
+   "tie": true,
+   "expanded_vs_system_gap": 0.0
+  },
+  {
+   "group_id": 12,
+   "scenario": "weekday",
+   "hub": "南昌站",
+   "demand_mult": 1.2,
+   "system_id": "B",
+   "system_score": 96.0,
+   "expanded_score": 96.0,
+   "expanded_headway": 12,
+   "expanded_limit": 0,
+   "blind_score": 96.0,
+   "tie": true,
+   "expanded_vs_system_gap": 0.0
+  },
+  {
+   "group_id": 13,
+   "scenario": "weekday",
+   "hub": "九江站",
+   "demand_mult": 1.0,
+   "system_id": "B",
+   "system_score": 96.0,
+   "expanded_score": 96.0,
+   "expanded_headway": 12,
+   "expanded_limit": 0,
+   "blind_score": 96.0,
+   "tie": true,
+   "expanded_vs_system_gap": 0.0
+  },
+  {
+   "group_id": 14,
+   "scenario": "weekday",
+   "hub": "九江站",
+   "demand_mult": 1.2,
+   "system_id": "B",
+   "system_score": 96.0,
+   "expanded_score": 96.0,
+   "expanded_headway": 12,
+   "expanded_limit": 0,
+   "blind_score": 96.0,
+   "tie": true,
+   "expanded_vs_system_gap": 0.0
+  },
+  {
+   "group_id": 15,
+   "scenario": "weekday",
+   "hub": "上饶站",
+   "demand_mult": 1.0,
+   "system_id": "B",
+   "system_score": 96.0,
+   "expanded_score": 96.0,
+   "expanded_headway": 12,
+   "expanded_limit": 0,
+   "blind_score": 96.0,
+   "tie": true,
+   "expanded_vs_system_gap": 0.0
+  },
+  {
+   "group_id": 16,
+   "scenario": "weekday",
+   "hub": "上饶站",
+   "demand_mult": 1.2,
+   "system_id": "B",
+   "system_score": 96.0,
+   "expanded_score": 96.0,
+   "expanded_headway": 12,
+   "expanded_limit": 0,
+   "blind_score": 96.0,
+   "tie": true,
+   "expanded_vs_system_gap": 0.0
+  },
+  {
+   "group_id": 17,
+   "scenario": "weekday",
+   "hub": "庐山站",
+   "demand_mult": 1.0,
+   "system_id": "B",
+   "system_score": 96.0,
+   "expanded_score": 96.0,
+   "expanded_headway": 12,
+   "expanded_limit": 0,
+   "blind_score": 96.0,
+   "tie": true,
+   "expanded_vs_system_gap": 0.0
+  },
+  {
+   "group_id": 18,
+   "scenario": "weekday",
+   "hub": "庐山站",
+   "demand_mult": 1.2,
+   "system_id": "B",
+   "system_score": 96.0,
+   "expanded_score": 96.0,
+   "expanded_headway": 12,
+   "expanded_limit": 0,
+   "blind_score": 96.0,
+   "tie": true,
+   "expanded_vs_system_gap": 0.0
+  },
+  {
+   "group_id": 19,
+   "scenario": "weekday",
+   "hub": "赣州站",
+   "demand_mult": 1.0,
+   "system_id": "B",
+   "system_score": 96.0,
+   "expanded_score": 96.0,
+   "expanded_headway": 12,
+   "expanded_limit": 0,
+   "blind_score": 96.0,
+   "tie": true,
+   "expanded_vs_system_gap": 0.0
+  },
+  {
+   "group_id": 20,
+   "scenario": "weekday",
+   "hub": "赣州站",
+   "demand_mult": 1.2,
+   "system_id": "B",
+   "system_score": 96.0,
+   "expanded_score": 96.0,
+   "expanded_headway": 12,
+   "expanded_limit": 0,
+   "blind_score": 96.0,
+   "tie": true,
+   "expanded_vs_system_gap": 0.0
+  }
+ ],
+ "stats_capex": {
+  "tie_count": 20,
+  "blind_miss_count": 0,
+  "still_behind_count": 0,
+  "system_gap_avg": 0.75,
+  "dim_gaps_avg": {
+   "congestion": 5.05,
+   "service": -6.92,
+   "cost": 3.85,
+   "robustness": 0.0
+  },
+  "by_scenario": {
+   "holiday": {
+    "tie_count": 10,
+    "total": 10
+   },
+   "weekday": {
+    "tie_count": 10,
+    "total": 10
+   }
+  }
+ },
+ "rows_capex": [
+  {
+   "group_id": 1,
+   "scenario": "holiday",
+   "hub": "南昌站",
+   "demand_mult": 1.0,
+   "system_id": "D",
+   "system_score": 81.6,
+   "expanded_score": 82.3,
+   "expanded_headway": 9,
+   "expanded_limit": 2,
+   "blind_score": 82.3,
+   "tie": true,
+   "expanded_vs_system_gap": 0.7
+  },
+  {
+   "group_id": 2,
+   "scenario": "holiday",
+   "hub": "南昌站",
+   "demand_mult": 1.2,
+   "system_id": "D",
+   "system_score": 74.4,
+   "expanded_score": 76.7,
+   "expanded_headway": 8,
+   "expanded_limit": 2,
+   "blind_score": 76.7,
+   "tie": true,
+   "expanded_vs_system_gap": 2.3
+  },
+  {
+   "group_id": 3,
+   "scenario": "holiday",
+   "hub": "九江站",
+   "demand_mult": 1.0,
+   "system_id": "D",
+   "system_score": 81.6,
+   "expanded_score": 82.3,
+   "expanded_headway": 9,
+   "expanded_limit": 2,
+   "blind_score": 82.3,
+   "tie": true,
+   "expanded_vs_system_gap": 0.7
+  },
+  {
+   "group_id": 4,
+   "scenario": "holiday",
+   "hub": "九江站",
+   "demand_mult": 1.2,
+   "system_id": "D",
+   "system_score": 74.4,
+   "expanded_score": 76.7,
+   "expanded_headway": 8,
+   "expanded_limit": 2,
+   "blind_score": 76.7,
+   "tie": true,
+   "expanded_vs_system_gap": 2.3
+  },
+  {
+   "group_id": 5,
+   "scenario": "holiday",
+   "hub": "上饶站",
+   "demand_mult": 1.0,
+   "system_id": "D",
+   "system_score": 81.6,
+   "expanded_score": 82.3,
+   "expanded_headway": 9,
+   "expanded_limit": 2,
+   "blind_score": 82.3,
+   "tie": true,
+   "expanded_vs_system_gap": 0.7
+  },
+  {
+   "group_id": 6,
+   "scenario": "holiday",
+   "hub": "上饶站",
+   "demand_mult": 1.2,
+   "system_id": "D",
+   "system_score": 74.4,
+   "expanded_score": 76.7,
+   "expanded_headway": 8,
+   "expanded_limit": 2,
+   "blind_score": 76.7,
+   "tie": true,
+   "expanded_vs_system_gap": 2.3
+  },
+  {
+   "group_id": 7,
+   "scenario": "holiday",
+   "hub": "庐山站",
+   "demand_mult": 1.0,
+   "system_id": "D",
+   "system_score": 81.6,
+   "expanded_score": 82.3,
+   "expanded_headway": 9,
+   "expanded_limit": 2,
+   "blind_score": 82.3,
+   "tie": true,
+   "expanded_vs_system_gap": 0.7
+  },
+  {
+   "group_id": 8,
+   "scenario": "holiday",
+   "hub": "庐山站",
+   "demand_mult": 1.2,
+   "system_id": "D",
+   "system_score": 74.4,
+   "expanded_score": 76.7,
+   "expanded_headway": 8,
+   "expanded_limit": 2,
+   "blind_score": 76.7,
+   "tie": true,
+   "expanded_vs_system_gap": 2.3
+  },
+  {
+   "group_id": 9,
+   "scenario": "holiday",
+   "hub": "赣州站",
+   "demand_mult": 1.0,
+   "system_id": "D",
+   "system_score": 81.6,
+   "expanded_score": 82.3,
+   "expanded_headway": 9,
+   "expanded_limit": 2,
+   "blind_score": 82.3,
+   "tie": true,
+   "expanded_vs_system_gap": 0.7
+  },
+  {
+   "group_id": 10,
+   "scenario": "holiday",
+   "hub": "赣州站",
+   "demand_mult": 1.2,
+   "system_id": "D",
+   "system_score": 74.4,
+   "expanded_score": 76.7,
+   "expanded_headway": 8,
+   "expanded_limit": 2,
+   "blind_score": 76.7,
+   "tie": true,
+   "expanded_vs_system_gap": 2.3
+  },
+  {
+   "group_id": 11,
+   "scenario": "weekday",
+   "hub": "南昌站",
+   "demand_mult": 1.0,
+   "system_id": "B",
+   "system_score": 96.0,
+   "expanded_score": 96.0,
+   "expanded_headway": 12,
+   "expanded_limit": 0,
+   "blind_score": 96.0,
+   "tie": true,
+   "expanded_vs_system_gap": 0.0
+  },
+  {
+   "group_id": 12,
+   "scenario": "weekday",
+   "hub": "南昌站",
+   "demand_mult": 1.2,
+   "system_id": "B",
+   "system_score": 96.0,
+   "expanded_score": 96.0,
+   "expanded_headway": 12,
+   "expanded_limit": 0,
+   "blind_score": 96.0,
+   "tie": true,
+   "expanded_vs_system_gap": 0.0
+  },
+  {
+   "group_id": 13,
+   "scenario": "weekday",
+   "hub": "九江站",
+   "demand_mult": 1.0,
+   "system_id": "B",
+   "system_score": 96.0,
+   "expanded_score": 96.0,
+   "expanded_headway": 12,
+   "expanded_limit": 0,
+   "blind_score": 96.0,
+   "tie": true,
+   "expanded_vs_system_gap": 0.0
+  },
+  {
+   "group_id": 14,
+   "scenario": "weekday",
+   "hub": "九江站",
+   "demand_mult": 1.2,
+   "system_id": "B",
+   "system_score": 96.0,
+   "expanded_score": 96.0,
+   "expanded_headway": 12,
+   "expanded_limit": 0,
+   "blind_score": 96.0,
+   "tie": true,
+   "expanded_vs_system_gap": 0.0
+  },
+  {
+   "group_id": 15,
+   "scenario": "weekday",
+   "hub": "上饶站",
+   "demand_mult": 1.0,
+   "system_id": "B",
+   "system_score": 96.0,
+   "expanded_score": 96.0,
+   "expanded_headway": 12,
+   "expanded_limit": 0,
+   "blind_score": 96.0,
+   "tie": true,
+   "expanded_vs_system_gap": 0.0
+  },
+  {
+   "group_id": 16,
+   "scenario": "weekday",
+   "hub": "上饶站",
+   "demand_mult": 1.2,
+   "system_id": "B",
+   "system_score": 96.0,
+   "expanded_score": 96.0,
+   "expanded_headway": 12,
+   "expanded_limit": 0,
+   "blind_score": 96.0,
+   "tie": true,
+   "expanded_vs_system_gap": 0.0
+  },
+  {
+   "group_id": 17,
+   "scenario": "weekday",
+   "hub": "庐山站",
+   "demand_mult": 1.0,
+   "system_id": "B",
+   "system_score": 96.0,
+   "expanded_score": 96.0,
+   "expanded_headway": 12,
+   "expanded_limit": 0,
+   "blind_score": 96.0,
+   "tie": true,
+   "expanded_vs_system_gap": 0.0
+  },
+  {
+   "group_id": 18,
+   "scenario": "weekday",
+   "hub": "庐山站",
+   "demand_mult": 1.2,
+   "system_id": "B",
+   "system_score": 96.0,
+   "expanded_score": 96.0,
+   "expanded_headway": 12,
+   "expanded_limit": 0,
+   "blind_score": 96.0,
+   "tie": true,
+   "expanded_vs_system_gap": 0.0
+  },
+  {
+   "group_id": 19,
+   "scenario": "weekday",
+   "hub": "赣州站",
+   "demand_mult": 1.0,
+   "system_id": "B",
+   "system_score": 96.0,
+   "expanded_score": 96.0,
+   "expanded_headway": 12,
+   "expanded_limit": 0,
+   "blind_score": 96.0,
+   "tie": true,
+   "expanded_vs_system_gap": 0.0
+  },
+  {
+   "group_id": 20,
+   "scenario": "weekday",
+   "hub": "赣州站",
+   "demand_mult": 1.2,
+   "system_id": "B",
+   "system_score": 96.0,
+   "expanded_score": 96.0,
+   "expanded_headway": 12,
+   "expanded_limit": 0,
+   "blind_score": 96.0,
+   "tie": true,
+   "expanded_vs_system_gap": 0.0
+  }
+ ]
+}
