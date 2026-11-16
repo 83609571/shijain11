@@ -1,16 +1,19 @@
 /* ======================================================================
- * API 地址切换器
+ * API 地址切换器（v2 自动识别）
  * ----------------------------------------------------------------------
- * 本地演示：保持空串（同源调用，什么也不用改）。
- * 云端部署（Render）后：把下面赋值改成云端地址并上传本文件，例如：
- *   window.GANPO_API_BASE = 'https://ganpo-api.onrender.com';
+ * 规则：
+ *   - 页面跑在 github.io（线上静态站）→ 自动走云端 API（PythonAnywhere）
+ *   - 页面跑在本地 127.0.0.1/localhost → 保持空串（同源调用本地引擎）
+ *   - 云端地址不可用时，各页面自带降级逻辑，灯显示离线
  * 说明：本文件安装一个 fetch 包装器，把页面里所有 '/api/...' 相对调用
  * 自动改写成 'GANPO_API_BASE + /api/...'，跨域由 api_server.py 的
- * CORS 响应头放行。没有云端时留空，行为与从前完全一致。
+ * CORS 响应头放行。
  * ====================================================================== */
-window.GANPO_API_BASE = '';
 (function () {
-  var B = window.GANPO_API_BASE;
+  var host = window.location.hostname || '';
+  var isCloudPage = /github\.io$/.test(host) || host.indexOf('pythonanywhere') !== -1;
+  var B = isCloudPage ? 'https://ganpo.pythonanywhere.com' : '';
+  window.GANPO_API_BASE = B;
   if (!B) { return; }
   var raw = window.fetch;
   window.fetch = function (u, o) {
