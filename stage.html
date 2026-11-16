@@ -246,18 +246,31 @@
   </section>
   <section class="cell">
     <h2>② 把客流再加 30%<span class="hub-tag" id="sim-hub-label"> · 南昌站</span></h2>
-    <p>demand_mult 0.8→1.4 滑块（300ms 防抖）→ POST /api/simulate 实时三个物理指标与同需求现状的相对变化；饱和度超满负荷变红并给出建议档位，同时显示配车需求与可用车辆余量。<b>不显示总分</b>（沙盘评分 fixed60 口径，避免与智能体推荐混淆）。枢纽跟随 ①。</p>
+    <p>四项运营参数（发车间隔 / 编组 / 限流等级 / 需求乘子）全部可调，300ms 防抖 → POST /api/simulate 实时三个物理指标与同需求现状的相对变化；饱和度超满负荷变红并给出建议，同时显示配车需求与可用车辆余量。控件量程即护栏边界（GR-01/02：4–30 min；GR-03：2/4/6/8 辆；GR-04：0–3；GR-06：0.5–2.0），GR-05/07 越界时前端按服务端 normalize_config 同口径钳制并留痕提示。<b>不显示总分</b>（沙盘评分 fixed60 口径，避免与智能体推荐混淆）。枢纽跟随 ①。</p>
     <div class="sim-grid">
       <div class="sim-ctls">
-        <div class="ctl-row" id="row-hv"><span class="ctl-label">档位</span>
-          <button class="chip on" data-hv="10" data-limit="0">10 分钟 · A 档</button>
-          <button class="chip" data-hv="8" data-limit="1">8 分钟 · D 档</button>
+        <div class="ctl-row" id="row-hv"><span class="ctl-label">发车间隔</span>
+          <input type="range" id="hv-slider" min="4" max="30" step="0.5" value="10">
+          <b id="hv-val" style="font-size:12px;color:#8fd8ff;">10.0 min</b>
         </div>
-        <div class="ctl-row"><span class="ctl-label">客流</span>
-          <input type="range" id="sim-slider" min="0.8" max="1.4" step="0.05" value="1">
+        <div class="ctl-row" id="row-fc"><span class="ctl-label">编组</span>
+          <button class="chip" data-fc="2">2 辆</button>
+          <button class="chip" data-fc="4">4 辆</button>
+          <button class="chip" data-fc="6">6 辆</button>
+          <button class="chip on" data-fc="8">8 辆</button>
+        </div>
+        <div class="ctl-row" id="row-limit"><span class="ctl-label">限流等级</span>
+          <button class="chip on" data-lv="0">0 · 不限流</button>
+          <button class="chip" data-lv="1">1 · 一级</button>
+          <button class="chip" data-lv="2">2 · 二级</button>
+          <button class="chip" data-lv="3">3 · 三级限流</button>
+        </div>
+        <div class="ctl-row"><span class="ctl-label">需求乘子</span>
+          <input type="range" id="sim-slider" min="0.5" max="2.0" step="0.05" value="1">
           <b id="sim-mult" style="font-size:12px;color:#8fd8ff;">×1.00</b>
         </div>
         <div class="sim-suggest" id="sim-suggest"></div>
+        <div class="sim-suggest" id="sim-guard" style="color:#ffb4b4;font-weight:700;" hidden></div>
       </div>
       <div class="sim-viz">
         <div class="metric-row">
@@ -575,10 +588,10 @@
   var APP = {hub: '南昌站'};
 
   // —— ② 客流滑块（I2a）：全部数字来自 /api/simulate，前端不写死指标 ——
-  var simState = {headway: 10, limit: 0, demand: 1.0, timer: null, seq: 0};
-  function simPost(hub, hv, limit, demand){
+  var simState = {headway: 10, formation: 8, limit: 0, demand: 1.0, timer: null, seq: 0};
+  function simPost(hub, hv, fc, limit, demand){
     return apiFetch('/api/simulate', {method: 'POST', headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({scenario: 'holiday', hub: hub, headway: hv, formation_cars: 8,
+      body: JSON.stringify({scenario: 'holiday', hub: hub, headway: hv, formation_cars: fc,
                             limit_level: limit, demand_mult: demand})})
       .then(function(r){ return r.json(); });
   }
@@ -588,16 +601,32 @@
     m.querySelector('.m-delta').textContent = '同需求现状 ' + base + ' · 变化 ' + (delta > 0 ? '+' : '') + delta;
     m.classList.toggle('over', !!over);
   }
+  function syncFcChips(fc){
+    el('row-fc').querySelectorAll('.chip').forEach(function(x){
+      x.classList.toggle('on', +x.getAttribute('data-fc') === fc);
+    });
+  }
   function simUpdate(){
     var seq = ++simState.seq;
-    var otherHv = simState.headway === 10 ? 8 : 10;
-    var otherLimit = simState.headway === 10 ? 1 : 0;
-    Promise.all([
-      simPost(APP.hub, simState.headway, simState.limit, simState.demand),
-      simPost(APP.hub, otherHv, otherLimit, simState.demand)
-    ]).then(function(rs){
+    // —— 前端护栏预钳制（与服务端 normalize_config 同口径，越界留痕）——
+    var hints = [];
+    var hv = simState.headway, fc = simState.formation, lv = simState.limit, dm = simState.demand;
+    if (lv === 3 && fc < 6) {
+      hints.push('GR-05：三级限流须配套疏运，编组由 ' + fc + ' 辆提至 6 辆');
+      fc = 6;
+    }
+    var cap = fc * 90 * (60 / hv) * 0.95;   // SEATS_PER_CAR=90, LOAD_AVAILABILITY=0.95
+    if (cap < 1200) {
+      var fixed = Math.min(8, Math.max(4, fc + 2));
+      hints.push('GR-07：小时运能 ' + Math.round(cap) + ' 人 < 1200，编组由 ' + fc + ' 辆提至 ' + fixed + ' 辆');
+      fc = fixed;
+    }
+    if (fc !== simState.formation) { simState.formation = fc; syncFcChips(fc); }
+    var g = el('sim-guard');
+    g.textContent = hints.join('；');
+    g.hidden = hints.length === 0;
+    simPost(APP.hub, hv, fc, lv, dm).then(function(d){
       if (seq !== simState.seq) return;  // 只采纳最新一次
-      var d = rs[0], o = rs[1];
       if (!d.ok){
         var e = el('sim-err'); e.hidden = false; e.textContent = '加载失败：' + (d.error || 'API 未连接');
         return;
@@ -615,17 +644,10 @@
         + (add > 0 ? '<span class="over">需增购 ' + add + ' 列</span>'
                    : '余 ' + (fa - rt) + ' 列');
       el('sim-suggest').textContent = d.over_capacity
-        ? (simState.headway === 10
-           ? '饱和度超满负荷：建议切 8 分钟档（见对照行）'
-           : '8 分钟档仍超满负荷——需叠加限流或走增购决策（系统边界，如实呈现）')
+        ? '饱和度超满负荷：建议压缩间隔、加大编组或叠加限流（对照下方配车约束决策）'
         : '';
-      if (o.ok){
-        var opm = o.plan.metrics, addO = Math.max(0, opm.required_trains - o.fleet_available);
-        el('sim-cmp').innerHTML = '对照档 · ' + otherHv + ' 分钟：饱和度 ' + opm.max_saturation
-          + ' · 配车 ' + opm.required_trains + ' 列'
-          + (addO > 0 ? '（<span style="color:var(--red)">需增购 ' + addO + '</span>）'
-                      : '（余 ' + (o.fleet_available - opm.required_trains) + ' 列）');
-      }
+      el('sim-cmp').innerHTML = '现状对照 · 12 分钟 · 8 辆 · 不限流（同需求）：饱和度 '
+        + bm.max_saturation + ' · 延误 ' + bm.avg_delay_min + ' min · 配车 ' + bm.required_trains + ' 列';
     }, function(){ if (seq === simState.seq){
       var e = el('sim-err'); e.hidden = false; e.textContent = '加载失败：API 未连接';
     }});
@@ -634,13 +656,25 @@
     clearTimeout(simState.timer);
     simState.timer = setTimeout(simUpdate, 300);
   }
-  el('row-hv').addEventListener('click', function(ev){
+  el('hv-slider').addEventListener('input', function(){
+    simState.headway = +this.value;
+    el('hv-val').textContent = (+this.value).toFixed(1) + ' min';
+    simSchedule();
+  });
+  el('row-fc').addEventListener('click', function(ev){
     var b = ev.target.closest('.chip');
     if (!b) return;
     this.querySelectorAll('.chip').forEach(function(x){ x.classList.remove('on'); });
     b.classList.add('on');
-    simState.headway = +b.getAttribute('data-hv');
-    simState.limit = +b.getAttribute('data-limit');
+    simState.formation = +b.getAttribute('data-fc');
+    simSchedule();
+  });
+  el('row-limit').addEventListener('click', function(ev){
+    var b = ev.target.closest('.chip');
+    if (!b) return;
+    this.querySelectorAll('.chip').forEach(function(x){ x.classList.remove('on'); });
+    b.classList.add('on');
+    simState.limit = +b.getAttribute('data-lv');
     simSchedule();
   });
   el('sim-slider').addEventListener('input', function(){
