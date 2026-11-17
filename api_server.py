@@ -312,6 +312,18 @@ def attach_economics(doc: dict) -> dict:
     return doc
 
 
+def _py_executable() -> str:
+    """选可用的 Python 解释器。
+
+    在 uWSGI 托管下（PythonAnywhere 等）sys.executable 是 uwsgi 二进制，
+    直接用它派生子进程会把 --scenario 等当成 uwsgi 选项报 getopt_long 错。
+    """
+    exe = sys.executable or ""
+    if os.path.basename(exe).lower().startswith("python"):
+        return exe
+    return "python3"
+
+
 def run_agent(scenario: str, hub: str, provider: str = "local") -> tuple[dict, str, float]:
     """跑完整智能体链路，返回 (决策文档, 产物相对路径, 耗时秒)。
 
@@ -321,7 +333,7 @@ def run_agent(scenario: str, hub: str, provider: str = "local") -> tuple[dict, s
     ts = time.strftime("%Y%m%dT%H%M%S")
     out_path = os.path.join(SCRATCH_DIR, f"agent_decision_{scenario}_{ts}.json")
     os.makedirs(SCRATCH_DIR, exist_ok=True)
-    cmd = [sys.executable, RUN_AGENT,
+    cmd = [_py_executable(), RUN_AGENT,
            "--scenario", scenario, "--hub", hub,
            "--provider", provider,
            "--out", SCRATCH_DIR,
